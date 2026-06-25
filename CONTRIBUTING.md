@@ -5,10 +5,12 @@ Thank you for your interest in contributing! This guide will help you get starte
 ## Development Setup
 
 ### Prerequisites
+
 - Node.js 18+
 - Git
 
 ### Installation
+
 ```bash
 git clone https://github.com/luminarylane/facebook-mcp-server.git
 cd facebook-mcp-server
@@ -16,6 +18,7 @@ npm install
 ```
 
 ### Environment Setup
+
 ```bash
 cp .env.example .env
 # Add your Facebook Page credentials to .env
@@ -24,24 +27,29 @@ cp .env.example .env
 ## Development Workflow
 
 ### 1. Create a Branch
+
 ```bash
 git checkout -b feature/your-description
 ```
 
 ### 2. Make Changes
+
 Follow the existing code style and conventions.
 
 ### 3. Test
+
 ```bash
 npm test
 ```
 
 ### 4. Build
+
 ```bash
 npm run build
 ```
 
 ### 5. Push and Create PR
+
 ```bash
 git push origin your-branch-name
 gh pr create --title "Description" --body "Details..."
@@ -65,6 +73,7 @@ npx tsc --noEmit
 ```
 
 ### Writing Tests
+
 - Place tests alongside source files as `*.test.ts`
 - Use `vi.stubGlobal("fetch", ...)` to stub network calls
 - Every tool handler should have happy-path and error-path coverage

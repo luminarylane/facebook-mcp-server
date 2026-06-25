@@ -10,20 +10,20 @@ A [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server for the
 
 ### SENSE Tools (Read)
 
-| Tool | Description |
-|------|-------------|
+| Tool                   | Description                                                         |
+| ---------------------- | ------------------------------------------------------------------- |
 | `fb_get_page_insights` | Page-level metrics: impressions, reach, engagements, follower count |
-| `fb_get_post_insights` | Post-level metrics: impressions, clicks, reactions |
-| `fb_get_comments` | Comments on a post with author info, likes, replies |
-| `fb_get_page_feed` | Your published posts with permalinks, shares, timestamps |
+| `fb_get_post_insights` | Post-level metrics: impressions, clicks, reactions                  |
+| `fb_get_comments`      | Comments on a post with author info, likes, replies                 |
+| `fb_get_page_feed`     | Your published posts with permalinks, shares, timestamps            |
 
 ### ACT Tools (Write)
 
-| Tool | Description |
-|------|-------------|
-| `fb_create_post` | Create text, link, photo, or video posts. Supports first-comment for CTAs |
-| `fb_reply_comment` | Reply to a comment on a post |
-| `fb_delete_post` | Delete a post you published |
+| Tool               | Description                                                               |
+| ------------------ | ------------------------------------------------------------------------- |
+| `fb_create_post`   | Create text, link, photo, or video posts. Supports first-comment for CTAs |
+| `fb_reply_comment` | Reply to a comment on a post                                              |
+| `fb_delete_post`   | Delete a post you published                                               |
 
 ## Quick Start
 

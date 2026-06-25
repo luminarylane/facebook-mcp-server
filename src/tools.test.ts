@@ -36,10 +36,7 @@ describe("resolveCredentials", () => {
 
   it("returns null when both args and env are missing", () => {
     // If env is set at import, this test is a no-op, so guard with a stub
-    if (
-      !process.env.FACEBOOK_ACCESS_TOKEN ||
-      !process.env.FACEBOOK_PAGE_ID
-    ) {
+    if (!process.env.FACEBOOK_ACCESS_TOKEN || !process.env.FACEBOOK_PAGE_ID) {
       expect(resolveCredentials({})).toBeNull();
     }
   });
