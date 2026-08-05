@@ -1,9 +1,10 @@
 {
   "name": "@luminarylane/facebook-mcp-server",
-  "version": "1.6.8",
+  "version": "1.6.9",
   "description": "Standalone Facebook Pages MCP Server — SENSE + ACT tools for the Graph API",
   "type": "module",
   "main": "dist/index.js",
+  "exports": { ".": "./dist/index.js", "./lib": "./dist/lib/index.js" },
   "bin": {
     "luminarylane-facebook-mcp": "dist/index.js"
   },
