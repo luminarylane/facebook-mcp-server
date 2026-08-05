@@ -1,9 +1,14 @@
 /**
  * Pure SENSE/insights functions for the Facebook Graph API.
  *
- * Used by:
- *   1. The MCP server's tool handlers (wrapped in `senseResult` for MCP protocol).
- *   2. Any programmatic consumer importing from `facebook-mcp-server/lib`.
+ * Extracted from `index.ts` so they can be reused by:
+ *   1. The MCP server's tool handlers (`server.registerTool("fb_get_*")` —
+ *      they wrap these in MCP-protocol shape via `senseResult`).
+ *   2. The web app's `platform-insights.ts` orchestrator — imported via
+ *      webpack alias `@facebook-mcp/lib/insights` from compiled `dist/`.
+ *
+ * Single source of truth: any change to the URL paths, metric names, or
+ * response shape happens here and propagates to both callers automatically.
  */
 import type { FacebookClient } from "../client.js";
 import { withRetry } from "../rate-limiter.js";

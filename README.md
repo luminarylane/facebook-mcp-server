@@ -29,11 +29,21 @@ A [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server for the
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 22.14+
 - A Facebook Page Access Token ([how to get one](https://developers.facebook.com/docs/pages/access-tokens))
 - Your Facebook Page ID
 
 ### Install
+
+Published package: [@luminarylane/facebook-mcp-server on npm](https://www.npmjs.com/package/@luminarylane/facebook-mcp-server)
+
+Run without a global install:
+
+```bash
+FACEBOOK_ACCESS_TOKEN=your-token FACEBOOK_PAGE_ID=your-page-id npx --yes @luminarylane/facebook-mcp-server
+```
+
+To run from source:
 
 ```bash
 git clone https://github.com/luminarylane/facebook-mcp-server.git
@@ -69,8 +79,8 @@ Add to your `claude_desktop_config.json`:
 {
   "mcpServers": {
     "facebook": {
-      "command": "node",
-      "args": ["/path/to/facebook-mcp-server/dist/index.js"],
+      "command": "npx",
+      "args": ["--yes", "@luminarylane/facebook-mcp-server"],
       "env": {
         "FACEBOOK_ACCESS_TOKEN": "your_token_here",
         "FACEBOOK_PAGE_ID": "your_page_id_here"

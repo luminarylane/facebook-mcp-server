@@ -21,9 +21,7 @@ describe("buildCreatePostRequest — validation", () => {
     expect(r.ok).toBe(false);
     if (!r.ok) {
       expect(r.error).toBe("Invalid input");
-      expect(r.message).toMatch(
-        /at least a message, link, imageUrl, or videoUrl/,
-      );
+      expect(r.message).toMatch(/at least a message, link, imageUrl, or videoUrl/);
     }
   });
 

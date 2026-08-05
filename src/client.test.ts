@@ -4,7 +4,8 @@
  * Uses vi.stubGlobal("fetch", ...) to stub network calls. Every test resets
  * the stub in afterEach to prevent leakage. The most important test here is
  * the one asserting GRAPH_API_BASE points at graph.facebook.com — it's a
- * regression guard ensuring the correct API base URL is used.
+ * regression guard for Bug #1 discovered during live testing (the scaffold
+ * incorrectly used graph.instagram.com which rejects Facebook Login tokens).
  */
 
 import { describe, it, expect, vi, afterEach, beforeEach } from "vitest";
@@ -160,12 +161,11 @@ describe("FacebookClient — error handling", () => {
   });
 
   it("wraps non-JSON HTML error responses in FacebookApiError", async () => {
-    const fetchMock = vi.fn(
-      async () =>
-        new Response("<html>502 Bad Gateway</html>", {
-          status: 502,
-          headers: { "content-type": "text/html" },
-        }),
+    const fetchMock = vi.fn(async () =>
+      new Response("<html>502 Bad Gateway</html>", {
+        status: 502,
+        headers: { "content-type": "text/html" },
+      }),
     );
     vi.stubGlobal("fetch", fetchMock);
 

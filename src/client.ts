@@ -29,7 +29,7 @@ function credentialHash(creds: Credentials): string {
 }
 
 /**
- * Get or create a cached Facebook client.
+ * Get or create a cached Instagram client.
  */
 export function createClient(creds: Credentials): FacebookClient {
   const key = credentialHash(creds);
@@ -51,7 +51,7 @@ export function createClient(creds: Credentials): FacebookClient {
 }
 
 /**
- * Graph API error format from Facebook.
+ * Graph API error format from Facebook/Instagram.
  */
 export interface GraphApiError {
   error: {
