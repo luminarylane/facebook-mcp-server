@@ -3,8 +3,9 @@
  * Standalone Facebook Pages MCP Server
  *
  * Dual-purpose SENSE + ACT server for the Facebook Graph API (Pages).
- * Facebook publishes are synchronous — one POST to /{page-id}/feed
- * (or /photos, /videos) returns the new post ID directly.
+ * Unlike the Instagram MCP, Facebook publishes are synchronous — no container
+ * creation, no status polling. One POST to /{page-id}/feed (or /photos, /videos)
+ * returns the new post ID directly.
  *
  * Tools:
  *   SENSE: fb_get_page_insights, fb_get_post_insights, fb_get_comments,
@@ -371,7 +372,7 @@ server.registerTool(
   "fb_create_post",
   {
     description:
-      "Create a Facebook Page post. Supports text, link, photo, or video. Photos and videos must have publicly accessible HTTPS URLs. Returns the new post ID. Publishing is synchronous — no container flow.",
+      "Create a Facebook Page post. Supports text, link, photo, or video. Photos and videos must have publicly accessible HTTPS URLs. Returns the new post ID. Unlike Instagram, publishing is synchronous — no container flow.",
     inputSchema: {
       ...credentialFields,
       message: z

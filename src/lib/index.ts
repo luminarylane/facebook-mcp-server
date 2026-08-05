@@ -1,8 +1,9 @@
 /**
- * Public surface for programmatic (non-MCP) consumers.
+ * Public surface for non-MCP consumers (e.g. the web app importing via
+ * the `@facebook-mcp/lib` webpack alias).
  *
- * Import from `facebook-mcp-server/lib` to use the insights functions and
- * Graph API client directly without spinning up the MCP server.
+ * The MCP server's `index.ts` keeps registering its tool handlers using
+ * these same modules — single source of truth for both callers.
  */
 export * from "./insights.js";
 export { FacebookClient, FacebookApiError, createClient } from "../client.js";

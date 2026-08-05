@@ -32,9 +32,9 @@ export function suggestAction(
     if (d.includes("enotfound") || d.includes("dns"))
       return "DNS_FAILURE: Cannot resolve graph.facebook.com. Check your internet connection.";
     if (d.includes("timeout") || d.includes("abort"))
-      return "TIMEOUT: Request to Facebook timed out. Check your connection and retry.";
+      return "TIMEOUT: Request to Instagram timed out. Check your connection and retry.";
     if (d.includes("econnrefused") || d.includes("econnreset"))
-      return "CONNECTION_FAILED: Cannot connect to Facebook. The service may be down. Retry in 30s.";
+      return "CONNECTION_FAILED: Cannot connect to Instagram. The service may be down. Retry in 30s.";
     if (d.includes("fetch failed"))
       return "NETWORK_ERROR: Network request failed. Check your internet connection and retry.";
     return undefined;
@@ -80,8 +80,8 @@ export function suggestAction(
       if (d.includes("not approved") || d.includes("app not"))
         return "APP_NOT_APPROVED: Your Facebook app needs approval for this permission. Submit for review in the App Dashboard.";
       if (d.includes("business"))
-        return "BUSINESS_ACCOUNT_REQUIRED: This feature requires a Facebook Page linked to a Business account.";
-      return "FORBIDDEN: Facebook rejected this action. Check the error message for details.";
+        return "BUSINESS_ACCOUNT_REQUIRED: This feature requires an Instagram Business or Creator account linked to a Facebook Page.";
+      return "FORBIDDEN: Instagram rejected this action. Check the error message for details.";
 
     case 404: {
       const t = toolName.toLowerCase();
@@ -95,12 +95,12 @@ export function suggestAction(
     }
 
     case 429:
-      return "RATE_LIMITED: Facebook rate limit hit after automatic retries. Wait 60s and retry, or switch to a different task.";
+      return "RATE_LIMITED: Instagram rate limit hit after automatic retries. Wait 60s and retry, or switch to a different task.";
 
     case 500:
     case 502:
     case 503:
-      return "SERVER_ERROR: Facebook is having issues. Wait 30s and retry once.";
+      return "SERVER_ERROR: Instagram is having issues. Wait 30s and retry once.";
 
     default:
       return undefined;
